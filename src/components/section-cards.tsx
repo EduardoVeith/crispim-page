@@ -56,13 +56,13 @@ export function SectionCards() {
     gsap.fromTo(
       mockupPhone,
       {
-        opacity: 0,
+        opacity: 0.3,
         scale: 0.5,
       },
       {
         opacity: 1,
         scale: 1,
-        duration: 2,
+        duration: 1,
         ease: "power4.out",
       }
     );
@@ -103,13 +103,13 @@ export function SectionCards() {
       <section className="w-full pb-20" ref={sectionRef}>
         <Image
           src={Mockup}
-          alt="Mochup main"
-          className="sticky z-10 opacity-0 top-56 mx-auto -mt-[32rem] mb-16"
+          alt="Mockup main"
+          className="sticky z-10 opacity-0 top-80 md:top-56 mx-auto -mt-[32rem] mb-16 w-60 h-80 md:w-1/6"
           ref={mockupRef}
         />
 
         <h2
-          className="mb-56 text-center text-7xl font-semibold text-black mb-56 opacity-0"
+          className="md:mb-56 text-center text-2xl md:text-7xl font-semibold text-black opacity-0"
           ref={titleRef}
         >
           Use <span className="text-blue-royal">agora</span> o cupom{" "}
@@ -119,37 +119,37 @@ export function SectionCards() {
         <div className="relative w-full max-w-area-cards mx-auto h-area-cards">
           <Image
             src={Card01}
-            className="absolute left-11 opacity-0"
+            className="absolute w-20 md:w-44 md:h-56 md:left-20 left-8 opacity-0"
             alt="Card 01"
             ref={card01Ref}
           />
           <Image
             src={Card02}
-            className="absolute bottom-32 left-0 opacity-0"
+            className="absolute bottom-32 w-20 md:w-64 md:h-44 left-0 opacity-0"
             alt="Card 02"
             ref={card02Ref}
           />
           <Image
             src={Card03}
-            className="absolute bottom-0 left-80 opacity-0"
+            className="absolute bottom-0 md:w-64 md:h-44 left-80 w-20 opacity-0"
             alt="Card 03"
             ref={card03Ref}
           />
           <Image
             src={Card04}
-            className="absolute top-0 right-32 opacity-0"
+            className="absolute top-0 right-8 md:right-20 w-20 md:w-44 md:h-56 opacity-0"
             alt="Card 04"
             ref={card04Ref}
           />
           <Image
             src={Card05}
-            className="absolute bottom-28 right-0 opacity-0"
+            className="absolute bottom-28 md:w-64 md:h-44 right-0 w-20 opacity-0"
             alt="Card 05"
             ref={card05Ref}
           />
           <Image
             src={Card06}
-            className="absolute bottom-0 right-80 opacity-0"
+            className="absolute bottom-0 md:w-64 md:h-44 right-80 w-20 opacity-0"
             alt="Card 06"
             ref={card06Ref}
           />

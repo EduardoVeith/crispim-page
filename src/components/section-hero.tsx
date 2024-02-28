@@ -1,13 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { SlSocialInstagram } from "react-icons/sl";
 import { RiTiktokFill } from "react-icons/ri";
 
 import { GridContainer } from "./grid";
-import ConfirmationModal from "./ConfirmationModal";
 
 import IconFile from "/public/icon-file.svg";
 import IconHand from "/public/icon-hand.svg";
@@ -22,7 +21,6 @@ export function SectionHero() {
   const textHeroRef = useRef(null);
   const mockupLeftRef = useRef(null);
   const mockupRightRef = useRef(null);
-  const [confirmationModalOpen, setConfirmationModalOpen] = useState(false);
 
   useEffect(() => {
     const textHero = textHeroRef.current;
@@ -66,73 +64,59 @@ export function SectionHero() {
     );
   }, []);
 
-  useEffect(() => {
-    // Function to open the modal when the coupon is copied
-    const handleCopy = () => {
-      setConfirmationModalOpen(true);
-    };
-
-    // Add event listener for copy event
-    document.addEventListener("copy", handleCopy);
-
-    // Cleanup function to remove event listener
-    return () => {
-      document.removeEventListener("copy", handleCopy);
-    };
-  }, []);
-
   return (
     <section
       className="relative w-full h-section-hero bg-no-repeat bg-top bg-green-primary border-t 
-        border-t-blue-royal pt-16 overflow-hidden"
+        border-t-blue-royal pt-6 overflow-hidden"
     >
       <GridContainer className="flex flex-col items-center">
         <div
           className="w-full max-w-text-hero text-center opacity-0"
           ref={textHeroRef}
         >
-          <h3 className="text-xl font-medium text-black-title mb-4">
-            Cupom de 10% para entregas em casa ou retirada na loja{" "}
-            <span className="italic">com ainda mais desconto</span>
+          <h3 className="px-2 md:text-xl font-medium text-black-title mb-4 ">
+            Cupom de 10% de desconto para entregas em casa ou retirada na loja{" "}
           </h3>
-          <h4 className="text-base font-medium text-black-title mb-4">
+          <h4 className="text-xs md:text-base font-medium text-black-title mb-4">
             não exige valor mínimo de compra
           </h4>
-          <h1 className="text-blue-royal text-7xl/normal font-semibold mb-2">
+          <h1 className="text-blue-royal text-4xl/normal md:text-7xl/normal font-semibold mb-2">
             CRISPIM10
           </h1>
-          <div className="flex items-center justify-center gap-10">
+          <div className="flex items-center justify-center md:gap-10">
             <button
               onClick={() => {
                 copyText("CRISPIM10");
-                setConfirmationModalOpen(true);
               }}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 text-xs md:text-base"
             >
-              <Image src={IconFile} alt="Icon File" />
+              <Image src={IconFile} alt="Icon File" className="ml-2" />
               <span className="text-black-title font-medium">
                 Clique para copiar o cupom
               </span>
             </button>
             <a href="https://www.petz.com.br/">
               <button
-                className="py-4 px-5 bg-green-btn rounded-full 
+                className="flex items-center gap-2 text-xs md:text-base py-2 px-3 md:py-4 md:px-5 bg-green-btn rounded-full 
                         text-black-title font-bold"
               >
                 Site da Petz
               </button>
             </a>
-            <div id="section-social" className="flex">
-              <span className="text-black-title pb-5">Redes Sociais</span>
+            <div
+              id="section-social"
+              className="flex items-center gap-2 text-xs md:text-base"
+            >
+              <span className="text-black-title">Redes Sociais</span>
               <a
                 href="https://www.instagram.com/crispim.real"
-                className="text-xl pl-6"
+                className="text-xl pl-2"
               >
                 <SlSocialInstagram />
               </a>
               <a
                 href="https://www.tiktok.com/eduardoveith"
-                className="pl-6 text-2xl"
+                className="pl-3 text-2xl mr-2"
               >
                 <RiTiktokFill />
               </a>
@@ -143,52 +127,27 @@ export function SectionHero() {
           <Image
             src={IconHand}
             alt="Icon hand"
-            className="absolute left-0 bottom-0"
+            className="md:absolute left-0 bottom-0"
           />
           <Image
             src={IconHand02}
             alt="Icon hand 02"
-            className="absolute top-0 right-0"
+            className="absolute mt-6 top-0 right-0"
           />
         </div>
-        <div className="absolute -bottom-40 w-full max-w-area-mockups flex justify-between">
+        <div className="flex absolute -bottom-40 w-full max-w-area-mockups md:justify-between justify-center">
           <Image
             src={IconMockup}
             alt="Mockup"
-            className="relative top-[1.1rem] left-[3.3rem]"
+            className="relative top-[1.1rem] left-[3.3rem] md:w-80 w-60 h-52"
             ref={mockupLeftRef}
           />
           <Image
             src={IconMockup}
             alt="Mockup"
-            className="relative top-[1.1rem] right-[3.3rem]"
+            className="relative top-[1.1rem] right-[3.3rem] md:w-80 w-60 h-52"
             ref={mockupRightRef}
           />
-          {confirmationModalOpen && (
-            <ConfirmationModal
-              isOpen={confirmationModalOpen}
-              handleClose={() =>
-                setConfirmationModalOpen(!confirmationModalOpen)
-              }
-            >
-              <div className="flex flex-col items-center">
-                <div className="mb-4 pt-4 px-4 text-center">
-                  <span>Seu cupom foi copiado com sucesso!</span>
-                </div>
-                <div className="mt-4 pb-2">
-                  <button
-                    className="px-4 py-2 bg-green-btn text-black-title rounded-md hover:bg-gray-700"
-                    type="button"
-                    onClick={() =>
-                      setConfirmationModalOpen(!confirmationModalOpen)
-                    }
-                  >
-                    Fechar
-                  </button>
-                </div>
-              </div>
-            </ConfirmationModal>
-          )}
         </div>
       </GridContainer>
     </section>

@@ -24,15 +24,15 @@ export function Header(): JSX.Element {
   };
 
   return (
-    <header className="relative w-full h-24 flex items-center">
-      <GridContainer className="flex pl-12 items-center">
-        <div className="flex items-center gap-20 ml-80">
-          <nav className="flex gap-8">
+    <header className="relative w-full flex items-center text-center">
+      <GridContainer className="flex items-center">
+        <div className="m-auto">
+          <nav className="flex gap-12 items-center">
             {arrayMenu.map((item: MenuItem, index: number) => (
               <button
                 key={index}
                 onClick={() => handleItemClick(index, item.target)}
-                className={`mr-20 ml-10 px-7 py-1.5 text-black-title 
+                className={`px-5 py-1.5 text-black-title 
                 text-opacity-75 hover:text-opacity-100 transition-all ${
                   index === activeIndex ? activeStyled : ""
                 }`}

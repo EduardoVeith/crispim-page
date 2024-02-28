@@ -4,25 +4,23 @@ import { FaRegCopyright } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <footer className="relative w=full h-24 flex items-center">
-      <div id="section-footer" className="flex pl-36 items-center w-full">
-        <span className="text-black-title pr-2">Redes Sociais</span>
+    <footer className="w-full flex md:max-w-grid md:mx-auto md:px-3">
+      <div id="section-footer" className="flex md:ml-80">
+        <span className="text-xs pr-2 pl-2">Redes Sociais</span>
         <a
           href="https://www.instagram.com/crispim.real"
-          className="text-xl pl-6"
+          className="pr-2 text-xs"
         >
           <SlSocialInstagram />
         </a>
-        <a href="https://www.tiktok.com/eduardoveith" className="pl-6 text-2xl">
+        <a href="https://www.tiktok.com/eduardoveith" className="pr-2 text-">
           <RiTiktokFill />
         </a>
-        <span className="relative pl-60 ml-60 flex">Copyright 2024</span>
-        <a className="text-xs pl-2 ">
+        <span className="text-xs pr-1 pl-16">Copyright 2024</span>
+        <a className="text-xs">
           <FaRegCopyright />
         </a>
-        <span className="text-xs pl-96 italic">
-          cupom não cumulativo com outras promoções
-        </span>
+        <span className="text-xs italic pl-16">cupom não cumulativo</span>
       </div>
     </footer>
   );
