@@ -5,6 +5,8 @@ import Image from "next/image";
 import gsap from "gsap";
 import { SlSocialInstagram } from "react-icons/sl";
 import { RiTiktokFill } from "react-icons/ri";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { GridContainer } from "./grid";
 
@@ -15,6 +17,8 @@ import IconMockup from "/public/mockup.svg";
 
 function copyText(entryText: string) {
   navigator.clipboard.writeText(entryText);
+  const copySuccess = () => toast.success("Cupom copiado com sucesso!", {});
+  copySuccess();
 }
 
 export function SectionHero() {
@@ -70,6 +74,18 @@ export function SectionHero() {
         border-t-blue-royal pt-6 overflow-hidden"
     >
       <GridContainer className="flex flex-col items-center">
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <div
           className="w-full max-w-text-hero text-center opacity-0"
           ref={textHeroRef}
@@ -114,11 +130,8 @@ export function SectionHero() {
               >
                 <SlSocialInstagram />
               </a>
-              <a
-                href="https://www.tiktok.com/eduardoveith"
-                className="pl-3 text-2xl mr-2"
-              >
-                <RiTiktokFill />
+              <a href="#" className="pl-3 text-2xl mr-2">
+                <RiTiktokFill className="opacity-0" />
               </a>
             </div>
           </div>

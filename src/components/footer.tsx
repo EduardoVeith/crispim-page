@@ -13,7 +13,7 @@ export function Footer() {
         >
           <SlSocialInstagram />
         </a>
-        <a href="https://www.tiktok.com/eduardoveith" className="pr-2 text-">
+        <a href="#" className="opacity-0 pr-2 text-">
           <RiTiktokFill />
         </a>
         <span className="text-xs pr-1 pl-16">Copyright 2024</span>
