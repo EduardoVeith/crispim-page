@@ -73,19 +73,19 @@ export function SectionHero() {
       className="relative w-full h-section-hero bg-no-repeat bg-top bg-green-primary border-t 
         border-t-blue-royal pt-6 overflow-hidden"
     >
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <GridContainer className="flex flex-col items-center">
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
         <div
           className="w-full max-w-text-hero text-center opacity-0"
           ref={textHeroRef}
