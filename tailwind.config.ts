@@ -25,6 +25,9 @@ const config: Config = {
         "black-title": "#1c1c1c",
         "blue-royal": "#4169E1",
       },
+      fontFamily: {
+        "petz-logo": ["Kanit"],
+      },
     },
     maxWidth: {
       grid: "77.5rem",

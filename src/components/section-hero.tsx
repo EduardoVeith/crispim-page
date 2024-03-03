@@ -90,15 +90,19 @@ export function SectionHero() {
           className="w-full max-w-text-hero text-center opacity-0"
           ref={textHeroRef}
         >
-          <h3 className="px-2 md:text-xl font-medium text-black-title mb-4 ">
-            Cupom de 10% de desconto para entregas em casa ou retirada na loja{" "}
+          <h3 className="px-2 md:text-xl font-medium text-black-title ">
+            Use o CUPOM{" "}
           </h3>
-          <h4 className="text-xs md:text-base font-medium text-black-title mb-4">
-            não exige valor mínimo de compra
-          </h4>
           <h1 className="text-blue-royal text-4xl/normal md:text-7xl/normal font-semibold mb-2">
             CRISPIM10
           </h1>
+          <h4 className="text-xs md:text-base font-medium text-black-title mb-4">
+            E GANHE 10% OFF NA{" "}
+            <span className="font-petz-logo text-blue-royal">PETZ</span> *
+          </h4>
+          <h4 className="text-xs pb-2">
+            * Exclusivo para compras online ou retirada
+          </h4>
           <div className="flex items-center justify-center md:gap-10">
             <button
               onClick={() => {
