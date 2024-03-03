@@ -10,7 +10,7 @@ const epilogue = Epilogue({
 });
 
 export const metadata: Metadata = {
-  title: "Crispim Page",
+  title: "Cupom Crispim",
   description: "Projeto criado para vender o cupom CRISPIM10",
 };
 
