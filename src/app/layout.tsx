@@ -11,7 +11,7 @@ const epilogue = Epilogue({
 
 export const metadata: Metadata = {
   title: "Cupom Crispim",
-  description: "Projeto criado para vender o cupom CRISPIM10",
+  description: "Economize comprando na PETZ com o cupom CRISPIM10",
 };
 
 export default function RootLayout({
